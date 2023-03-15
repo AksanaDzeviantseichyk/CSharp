@@ -10,7 +10,6 @@ namespace TechTask
     {
         private double x;
         private double y;
-        
         public double getsetX
         {
             get { return x; }
@@ -22,6 +21,4 @@ namespace TechTask
             set { y = value; }
         }
     }
-
-
 }

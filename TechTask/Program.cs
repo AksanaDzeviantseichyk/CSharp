@@ -1,6 +1,5 @@
 ﻿using System.Xml.Linq;
 using TechTask;
-
 class Program
 {
     static void Main(string[] args)
@@ -26,11 +25,9 @@ class Program
                 Console.WriteLine("Enter coordinate y of dot C:");
                 C.getsetY = Double.Parse(Console.ReadLine());
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine($"Exception: {ex.Message}");
-                Console.WriteLine($"Method: {ex.TargetSite}");
-                
             }
 
             Triangle triangle = new(A, B, C);
@@ -67,9 +64,5 @@ class Program
             answer = Console.ReadLine().ToUpper();
 
         } while (answer == "Y");
-       
-
     }
-
-    
 }
