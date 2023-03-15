@@ -13,9 +13,9 @@ namespace TechTask
         private double lengthAC;
         public Triangle(Point A, Point B, Point C)
         {
-            lengthAB = Math.Sqrt(Math.Pow((B.getsetX - A.getsetX), 2) + Math.Pow((B.getsetY - A.getsetY), 2));
-            lengthBC = Math.Sqrt(Math.Pow((C.getsetX - B.getsetX), 2) + Math.Pow((C.getsetY - B.getsetY), 2));
-            lengthAC = Math.Sqrt(Math.Pow((C.getsetX - A.getsetX), 2) + Math.Pow((C.getsetY - A.getsetY), 2));
+            lengthAB = Math.Round(Math.Sqrt(Math.Pow((B.getsetX - A.getsetX), 2) + Math.Pow((B.getsetY - A.getsetY), 2)),3);
+            lengthBC = Math.Round(Math.Sqrt(Math.Pow((C.getsetX - B.getsetX), 2) + Math.Pow((C.getsetY - B.getsetY), 2)),3);
+            lengthAC = Math.Round(Math.Sqrt(Math.Pow((C.getsetX - A.getsetX), 2) + Math.Pow((C.getsetY - A.getsetY), 2)),3);
         }
         public void LengthOfSides()
         {
@@ -43,7 +43,7 @@ namespace TechTask
         }
         public bool isRight()
         {
-            double delta = 0.01;
+            double delta = 0.001;
             double maxSide;
             maxSide = Math.Max(lengthAC, Math.Max(lengthBC, lengthAB));
             if (maxSide == lengthAC)
@@ -65,7 +65,7 @@ namespace TechTask
         }
         public double Perimeter()
         {
-            return lengthAB + lengthBC + lengthAC;
+            return Math.Round(lengthAB + lengthBC + lengthAC,3);
         }
     }
 }
