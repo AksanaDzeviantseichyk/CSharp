@@ -8,40 +8,21 @@ namespace TechTask
 {
     public class Triangle
     {
-        private double Xa;
-        private double Ya;
-        private double Xb;
-        private double Yb;
-        private double Xc;
-        private double Yc;
         private double lengthAB;
         private double lengthBC;
         private double lengthAC;
 
-        public void InputCoordinates()
+        public Triangle(Point A, Point B, Point C)
         {
-            Console.WriteLine("Enter coordinate x of dot A:");
-            Xa = Double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter coordinate y of dot A:");
-            Ya = Double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter coordinate x of dot B:");
-            Xb = Double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter coordinate y of dot B:");
-            Yb = Double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter coordinate x of dot C:");
-            Xc = Double.Parse(Console.ReadLine());
-            Console.WriteLine("Enter coordinate y of dot C:");
-            Yc = Double.Parse(Console.ReadLine());
-
+            lengthAB = Math.Sqrt(Math.Pow((B.getsetX - A.getsetX), 2) + Math.Pow((B.getsetY - A.getsetY), 2));
+            lengthBC = Math.Sqrt(Math.Pow((C.getsetX - B.getsetX), 2) + Math.Pow((C.getsetY - B.getsetY), 2));
+            lengthAC = Math.Sqrt(Math.Pow((C.getsetX - A.getsetX), 2) + Math.Pow((C.getsetY - A.getsetY), 2));
         }
 
         public void LengthOfSides()
         {
-            lengthAB = Math.Sqrt(Math.Pow((Xb - Xa), 2) + Math.Pow((Yb - Ya), 2));
             Console.WriteLine($"Length of AB is:{lengthAB}");
-            lengthBC = Math.Sqrt(Math.Pow((Xc - Xb), 2) + Math.Pow((Yc - Yb), 2));
             Console.WriteLine($"Length of BC is:{lengthBC}");
-            lengthAC = Math.Sqrt(Math.Pow((Xc - Xa), 2) + Math.Pow((Yc - Ya), 2));
             Console.WriteLine($"Length of AC is:{lengthAC}");
         }
 
