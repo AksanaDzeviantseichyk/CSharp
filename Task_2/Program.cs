@@ -10,9 +10,9 @@ class Program
         {
             Console.WriteLine("Choose:");
             Console.WriteLine("1 - to determine if a word is a palindrome");
-            Console.WriteLine("2 - to swap the values in the array, enter 2");
-            Console.WriteLine("3 - to change array values ​​to the right and left of the main diagonal, enter 3");
-            Console.WriteLine("4 - to play the Game of Life, enter 4");
+            Console.WriteLine("2 - to swap the values in the array");
+            Console.WriteLine("3 - to change array values ​​to the right and left of the main diagonal");
+            Console.WriteLine("4 - to play the Game of Life");
             Console.WriteLine("Enter the number of the operation you want to execute:");
             
             var numberOfOperation = Console.ReadLine();
