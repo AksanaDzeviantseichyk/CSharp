@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Text;
 using System.Xml.Linq;
+using Task_2;
 
 class Program
 {
@@ -16,7 +17,7 @@ class Program
             Console.WriteLine("4 - to play the Game of Life");
             Console.WriteLine("Enter the number of the operation you want to execute:");
             
-            var numberOfOperation = Console.ReadLine();
+            var numberOfOperation = Console.ReadLine().Trim();
             switch (numberOfOperation)
             {
                 case "1":
@@ -29,7 +30,7 @@ class Program
                     changeArrayValues();
                     break;
                 case "4":
-                    Console.WriteLine("");
+                    playGameOflife();
                     break;
                 default:
                     Console.WriteLine("Unknown operation");
@@ -54,7 +55,7 @@ class Program
         {
             if (isPalindrom(word.ToLower()))
                 Console.Write($"{word} - palindrom ");
-            else Console.WriteLine($"{word} - not palindrom ");
+            else Console.Write($"{word} - not palindrom ");
         }
         Console.WriteLine();
         
@@ -72,21 +73,35 @@ class Program
         static void swapArrayValues()
     {
         Console.WriteLine("Enter a size of array:");
-        int size = int.Parse(Console.ReadLine());
-        int[] array = new int[size];
-        for (int i = 0; i < array.Length; i++)
+        try
         {
-            array[i] = int.Parse(Console.ReadLine());
+
+            int size = int.Parse(Console.ReadLine());
+            int[] array = new int[size];
+            Console.WriteLine("Enter values of array:");
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < array.Length / 2; i++)
+            {
+                int temp = array[i];
+                array[i] = array[array.Length - i - 1];
+                array[array.Length - i - 1] = temp;
+            }
+            Console.WriteLine("Output array:");
+            printArray(array);
         }
-        for (int i = 0; i < array.Length / 2; i++)
+        catch (Exception ex)
         {
-            int temp = array[i];
-            array[i] = array[array.Length - i - 1];
-            array[array.Length - i - 1] = temp;
-        }
-        Console.WriteLine("Output array:");
-        printArray(array);
-       
+            Console.WriteLine($"Exception: {ex.Message}");
+        }     
+    }
+    public static void printArray<T>(T[] array)
+    {
+        foreach (var item in array)
+            Console.Write($"{item}\t");
+        Console.WriteLine();
     }
     #endregion
 
@@ -113,21 +128,6 @@ class Program
         print2DArray(outputArray);
 
     }
-    #endregion
-
-    #region case4
-    static void gameOflife()
-    {
-
-    }
-    #endregion
-
-    public static void printArray<T>(T[] array)
-    {
-        foreach (var item in array)
-            Console.Write($"{item}\t");
-        Console.WriteLine();
-    }
     public static void print2DArray<T>(T[,] matrix)
     {
         for (int i = 0; i < matrix.GetLength(0); i++)
@@ -137,5 +137,23 @@ class Program
             Console.WriteLine();
         }
     }
+    #endregion
+
+    #region case4
+    static void playGameOflife()
+    { 
+        GameOfLife game = new GameOfLife();
+        while (true)
+        {
+            Console.WriteLine("Press Enter to continue or type 'exit' to quit");
+            string input = Console.ReadLine();
+            if (input.ToLower() == "exit") break;
+            if(!game.NextGeneration()) break;
+        }
+    }
+    #endregion
+
+   
+    
 
 }
