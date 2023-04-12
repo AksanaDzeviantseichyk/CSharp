@@ -11,20 +11,21 @@ Hgggh – palindrome, jsj – palindrome, lkks  – not palindrome, a - palindrome, li
 ### Part 2
 Write code that swaps the first and last values in the array, the second and penultimate values, and so on. 
 ##### Example: 
+
 |---| --- | --- |
 |(10, 5, 3, 4)| => |(4, 3, 5, 10)| 
-|---| --- | --- |
+
 
 Array input and output can be done from the console.
 
 ### Part 3
 Write a code that inserts the value of zero to the elements on the left side of the main diagonal into an array-matrix of arbitrary size, and a value of one to the right. The initial matrix should be declared and filled in the code. Write the result to another variable - an array of the same size as the original one, without modifying the original one.
 ##### Example:
-|---| --- | --- |
+
 |0	1	2| 					|0	1	1|
 |3	4	5|  =>		|0	4	1|
 |6	7	8| 					|0	0	8|
-|---| --- | --- |
+
 
 ### Part 4
 Implement a Game of Life. 
@@ -36,14 +37,14 @@ https://playgameoflife.com/
 The initial state of the field is simply set by a variable - a two-dimensional array (the size of the array determines the size of the playing field).
 
 ###### Output the initial state of the field to the console in the specified format:
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|5 |	+	| -	| +	| -	| -	| -	| - |	-	| + |
+
+|5 |	'+'	| '-'	| '+'	| '-'	| '-'	| '-'	| '-' |	'-'	| '+' |
 |4	| +	| -	| +	| -	| -	| +	| -	| -	| + |
 |3	| -	| -	| +	| -	| -	| -	| -	| -	| + |
 |2	| +	| -	| +	| -	| -	| +	| -	| -	| + |
 |1	| -	| -	| +	| -	| -	| +	| -	| -	| + |
 |0	| 1	| 2	| 3	| 4	| 5	| 6	| 7	| 8	| 9 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+
 
 ####### plus(+) stands for living cells
 ####### minus(-) stands for empty cells
