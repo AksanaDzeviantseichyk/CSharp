@@ -19,11 +19,11 @@ Array input and output can be done from the console.
 Write a code that inserts the value of zero to the elements on the left side of the main diagonal into an array-matrix of arbitrary size, and a value of one to the right. The initial matrix should be declared and filled in the code. Write the result to another variable - an array of the same size as the original one, without modifying the original one.
 ##### Example:
 
-0	1	2 					0	1	1
+0	1	2 	=>		0	1	1
 
 3	4	5  =>		0	4	1
 
-6	7	8 					0	0	8
+6	7	8 	=>		0	0	8
 
 ### Part 4
 Implement a Game of Life. 
