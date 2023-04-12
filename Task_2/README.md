@@ -12,6 +12,7 @@ Hgggh – palindrome, jsj – palindrome, lkks  – not palindrome, a - palindrome, li
 Write code that swaps the first and last values in the array, the second and penultimate values, and so on. 
 ##### Example: 
 |(10, 5, 3, 4)| => |(4, 3, 5, 10)| 
+
 Array input and output can be done from the console.
 
 ### Part 3
@@ -39,9 +40,11 @@ The initial state of the field is simply set by a variable - a two-dimensional a
 |1	| -	| -	| +	| -	| -	| +	| -	| -	| + |
 |0	| 1	| 2	| 3	| 4	| 5	| 6	| 7	| 8	| 9 |
 
-####### + stands for living cells
-####### - stands for empty cells
+####### plus(+) stands for living cells
+####### minus(-) stands for empty cells
 
 For each pressing of any button - output to the console in the same format the new state of the field for the next generation.
+
 If the field is empty - display the message "Game over"
+
 If the field does not change during the generation - display the message "Game over"
